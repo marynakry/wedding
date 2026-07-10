@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from './components/Header'
 import dateImage from './assets/date.png'
+import engDateImage from './assets/eng-date.png'
 import dividerImage from './assets/divider.png'
 import vilaImage from './assets/vila.png'
 import sep3Image from './assets/sep3.png'
@@ -15,30 +16,18 @@ import RSVP from './components/RSVP'
 import './styles.css'
 import { contentByLocale, type Locale } from './content'
 
-export default function App(): JSX.Element {
-  const [locale, setLocale] = useState<Locale>('ru')
+type Props = {
+  locale: Locale
+}
+
+export default function App({ locale }: Props): JSX.Element {
   const content = contentByLocale[locale]
+  const currentDateImage = locale === 'en' ? engDateImage : dateImage
 
   return (
     <div className="page">
       <div className="card invite-card">
-        <div className="language-switch" role="group" aria-label="Language switch">
-          <button
-            type="button"
-            className={`language-button ${locale === 'ru' ? 'active' : ''}`}
-            onClick={() => setLocale('ru')}
-          >
-            RU
-          </button>
-          <button
-            type="button"
-            className={`language-button ${locale === 'en' ? 'active' : ''}`}
-            onClick={() => setLocale('en')}
-          >
-            EN
-          </button>
-        </div>
-        <Header locale={locale} names={content.names.couple} />
+        <Header locale={locale} />
         <section className="intro-section">
           <h2 className="intro-title">{content.intro.title}</h2>
           <div className="intro-subtitle-group">
@@ -49,7 +38,7 @@ export default function App(): JSX.Element {
           </div>
         </section>
         <section className="date-section">
-          <img src={dateImage} alt="Wedding date" className="date-image" />
+          <img src={currentDateImage} alt="Wedding date" className="date-image" />
         </section>
         <img src={dividerImage} alt="Divider" className="section-divider" />
         <section className="intro-section location-section">
@@ -67,7 +56,7 @@ export default function App(): JSX.Element {
             </div>
           </div>
         </section>
-        <img src={sep3Image} alt="Section divider" className="section-separator" />
+        <img src={sep3Image} alt="Section divider" className="section-separator after-location-separator" />
         <Program sectionTitle={content.program.sectionTitle} items={content.program.items} />
         <img src={sep4Image} alt="Section divider" className="section-separator sep4" />
         <DressCode title={content.dressCode.title} intro={content.dressCode.intro} note={content.dressCode.note} colors={content.dressCode.colors} />
