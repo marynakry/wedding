@@ -1,4 +1,4 @@
-export type Locale = 'ru' | 'en'
+export type Locale = 'ru' | 'en' | 'ua'
 
 type ProgramItem = { time: string; title: string }
 
@@ -161,6 +161,60 @@ export const contentByLocale: Record<Locale, SiteContent> = {
       successMessage: 'Thank you! Your response has been sent.',
       errorMessage: 'Could not submit the form. Please try again.',
       ending: 'We are looking forward to seeing you and will be happy to celebrate this day together!'
+    }
+  },
+  ua: {
+    names: {
+      couple: 'Maksym & Maryna'
+    },
+    intro: {
+      title: 'Дорогі рідні та друзі',
+      line1: 'Ми будемо щасливі розділити з вами один із найважливіших днів нашого життя.',
+      line2: 'Запрошуємо вас стати частиною цього особливого моменту та відсвяткувати початок нашої сімейної історії.'
+    },
+    venue: {
+      sectionTitle: 'Місце проведення',
+      name: 'Vila Lanna',
+      address: 'V Sadech 1/1, Prague',
+      buttonText: 'Переглянути на мапі'
+    },
+    program: {
+      sectionTitle: 'Програма дня',
+      items: [
+        { time: '14:30', title: 'Збір гостей' },
+        { time: '15:00', title: 'Церемонія' },
+        { time: '17:00', title: 'Святкова вечеря' },
+        { time: '22:00', title: 'Торт' }
+      ]
+    },
+    dressCode: {
+      title: 'Дрес-код',
+      intro: 'Ми хочемо, щоб цей день був сповнений легкості та тепла. Будемо раді, якщо ви підтримаєте атмосферу нашого свята, обравши образ у відтінках нашої кольорової палітри.',
+      note: '',
+      colors: dressCodeColors
+    },
+    wishes: {
+      title: 'Побажання',
+      message1: 'Найціннішим подарунком для нас буде ваша присутність у цей день.',
+      message2: 'Якщо ви також захочете привітати нас подарунком, будемо вдячні за внесок у бюджет нашої молодої сімʼї, який допоможе втілити наші мрії.'
+    },
+    rsvp: {
+      title: 'Анкета',
+      introBeforeDate: 'Будемо вдячні, якщо ви підтвердите свою присутність і заповните коротку анкету до',
+      deadline: '15.08.2026',
+      nameLabel: 'Ваше імʼя та прізвище',
+      attendanceLegend: 'Чи будете ви на нашому весільному святкуванні?',
+      attendanceYes: 'Обовʼязково буду',
+      attendanceNo: 'На жаль, не зможу',
+      mainCourseLegend: 'Яку основну страву ви обираєте?',
+      courseSalmon: 'Лосось',
+      courseBeef: 'Яловичина',
+      courseVegetarian: 'Вегетаріанська страва',
+      submitIdle: 'Надіслати',
+      submitLoading: 'Надсилання...',
+      successMessage: 'Дякуємо! Відповідь успішно надіслано.',
+      errorMessage: 'Не вдалося надіслати форму. Спробуйте ще раз.',
+      ending: 'З нетерпінням чекаємо на зустріч і будемо щасливі відсвяткувати цей день разом із вами!'
     }
   }
 }

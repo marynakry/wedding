@@ -22,7 +22,7 @@ type Props = {
 
 export default function App({ locale }: Props): JSX.Element {
   const content = contentByLocale[locale]
-  const currentDateImage = locale === 'en' ? engDateImage : dateImage
+  const currentDateImage = locale === 'ru' ? dateImage : engDateImage
 
   return (
     <div className="page">

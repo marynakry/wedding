@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default function Header({ locale }: Props) {
-  const headerImage = locale === 'en' ? headerImageEn : headerImageRu
+  const headerImage = locale === 'ru' ? headerImageRu : headerImageEn
 
   return (
     <header className="inv-header">
