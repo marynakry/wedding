@@ -2,7 +2,30 @@ import React, { useState } from 'react'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykqrooo'
 
-export default function RSVP() {
+type RSVPContent = {
+  title: string
+  introBeforeDate: string
+  deadline: string
+  nameLabel: string
+  attendanceLegend: string
+  attendanceYes: string
+  attendanceNo: string
+  mainCourseLegend: string
+  courseSalmon: string
+  courseBeef: string
+  courseVegetarian: string
+  submitIdle: string
+  submitLoading: string
+  successMessage: string
+  errorMessage: string
+  ending: string
+}
+
+type Props = {
+  copy: RSVPContent
+}
+
+export default function RSVP({ copy }: Props) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
   const [submitError, setSubmitError] = useState(false)
@@ -31,10 +54,10 @@ export default function RSVP() {
       }
 
       form.reset()
-      setSubmitMessage('Спасибо! Ответ успешно отправлен.')
+      setSubmitMessage(copy.successMessage)
     } catch {
       setSubmitError(true)
-      setSubmitMessage('Не удалось отправить форму. Попробуйте еще раз.')
+      setSubmitMessage(copy.errorMessage)
     } finally {
       setIsSubmitting(false)
     }
@@ -42,46 +65,46 @@ export default function RSVP() {
 
   return (
     <section className="rsvp-section">
-      <h3 className="section-title">Анкета</h3>
+      <h3 className="section-title">{copy.title}</h3>
       <p className="intro-subtitle">
-        Будем благодарны, если вы подтвердите свое присутствие и заполните небольшую анкету до <strong>15.08.2026</strong>
+        {copy.introBeforeDate} <strong>{copy.deadline}</strong>
       </p>
       <form className="rsvp-form" onSubmit={handleSubmit}>
         <div className="rsvp-field">
-          <label htmlFor="guest-name" className="rsvp-label">Ваше имя и фамилия</label>
+          <label htmlFor="guest-name" className="rsvp-label">{copy.nameLabel}</label>
           <input id="guest-name" name="guestName" type="text" className="rsvp-input" required />
         </div>
 
         <fieldset className="rsvp-fieldset">
-          <legend className="rsvp-label">Будете ли вы на нашем свадебном торжестве?</legend>
+          <legend className="rsvp-label">{copy.attendanceLegend}</legend>
           <label className="rsvp-option">
             <input type="radio" name="attendance" value="yes" required />
-            <span>Обязательно буду</span>
+            <span>{copy.attendanceYes}</span>
           </label>
           <label className="rsvp-option">
             <input type="radio" name="attendance" value="no" required />
-            <span>К сожалению, не получится</span>
+            <span>{copy.attendanceNo}</span>
           </label>
         </fieldset>
 
         <fieldset className="rsvp-fieldset">
-          <legend className="rsvp-label">Какое основное блюдо вы предпочитаете?</legend>
+          <legend className="rsvp-label">{copy.mainCourseLegend}</legend>
           <label className="rsvp-option">
             <input type="radio" name="mainCourse" value="salmon" required />
-            <span>Лосось</span>
+            <span>{copy.courseSalmon}</span>
           </label>
           <label className="rsvp-option">
             <input type="radio" name="mainCourse" value="beef" required />
-            <span>Говядина</span>
+            <span>{copy.courseBeef}</span>
           </label>
           <label className="rsvp-option">
             <input type="radio" name="mainCourse" value="vegetarian" required />
-            <span>Вегетарианское блюдо</span>
+            <span>{copy.courseVegetarian}</span>
           </label>
         </fieldset>
 
         <button type="submit" className="location-link rsvp-submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Отправка...' : 'Отправить'}
+          {isSubmitting ? copy.submitLoading : copy.submitIdle}
         </button>
         {submitMessage ? (
           <p className={`rsvp-status ${submitError ? 'rsvp-status-error' : 'rsvp-status-success'}`} role="status">
@@ -89,7 +112,7 @@ export default function RSVP() {
           </p>
         ) : null}
       </form>
-      <p className="intro-subtitle rsvp-ending">С нетерпением ждем нашей встречи и будем счастливы отпраздновать этот день вместе с вами!</p>
+      <p className="intro-subtitle rsvp-ending">{copy.ending}</p>
     </section>
   )
 }

@@ -5,7 +5,7 @@ import foodImage from '../assets/food.png'
 import cakeImage from '../assets/cake.png'
 
 type Item = { time: string; title: string }
-type Props = { items: Item[] }
+type Props = { sectionTitle: string; items: Item[] }
 
 const Icon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -13,10 +13,10 @@ const Icon = () => (
   </svg>
 )
 
-export default function Program({ items }: Props) {
+export default function Program({ sectionTitle, items }: Props) {
   return (
     <section className="program">
-      <h3 className="section-title">Программа дня</h3>
+      <h3 className="section-title">{sectionTitle}</h3>
       <div className="timeline">
         {items.map((it, idx) => (
           <div key={idx} className="timeline-item">

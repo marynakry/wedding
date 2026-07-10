@@ -1,13 +1,20 @@
 import React from 'react'
+import partyImage from '../assets/party.png'
 
-export default function Wishes() {
+type Props = {
+  title: string
+  message1: string
+  message2: string
+}
+
+export default function Wishes({ title, message1, message2 }: Props) {
   return (
     <section className="wishes">
-      <h3 className="section-title">Пожелания</h3>
+      <h3 className="section-title">{title}</h3>
       <div className="wishes-copy">
-        <p className="wishes-message">Самым ценным подарком для нас станет ваше присутствие в этот день</p>
-        <img src="/src/assets/party.png" alt="" className="wishes-party" aria-hidden="true" />
-        <p className="wishes-message">Если вы захотите поздравить нас еще и подарком, будем благодарны за вклад в бюджет нашей молодой семьи, который поможет воплотить наши мечты</p>
+        <p className="wishes-message">{message1}</p>
+        <img src={partyImage} alt="" className="wishes-party" aria-hidden="true" />
+        <p className="wishes-message">{message2}</p>
       </div>
     </section>
   )

@@ -1,19 +1,18 @@
 import React from 'react'
 
-type Props = { colors: string[]; text: string }
+type Props = { title: string; intro: string; note: string; colors: string[] }
 
-export default function DressCode({ colors, text }: Props) {
+export default function DressCode({ title, intro, note, colors }: Props) {
   return (
     <section className="dresscode">
-      <h3 className="section-title">Дресс-код</h3>
-      <p className="intro-subtitle">Мы хотим, чтобы этот день был наполнен легкостью и теплом. Будем рады, если вы поддержите атмосферу нашего праздника, выбрав образ в оттенках нашей цветовой палитры</p>
-      <p className="intro-subtitle">{text}</p>
+      <h3 className="section-title">{title}</h3>
+      <p className="intro-subtitle">{intro}</p>
+      {note ? <p className="intro-subtitle">{note}</p> : null}
       <div className="swatches">
         {colors.map((c, i) => (
           <div key={i} className="swatch" style={{ background: c }} />
         ))}
       </div>
-
     </section>
   )
 }
