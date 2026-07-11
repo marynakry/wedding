@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header'
 import dateImage from './assets/date.png'
 import engDateImage from './assets/eng-date.png'
+import uaDateImage from './assets/ua-date.png'
 import dividerImage from './assets/divider.png'
 import vilaImage from './assets/vila.png'
 import sep3Image from './assets/sep3.png'
@@ -22,7 +23,7 @@ type Props = {
 
 export default function App({ locale }: Props): JSX.Element {
   const content = contentByLocale[locale]
-  const currentDateImage = locale === 'ru' ? dateImage : engDateImage
+  const currentDateImage = locale === 'ru' ? dateImage : locale === 'en' ? engDateImage : uaDateImage
 
   return (
     <div className="page">
@@ -59,7 +60,15 @@ export default function App({ locale }: Props): JSX.Element {
         <img src={sep3Image} alt="Section divider" className="section-separator after-location-separator" />
         <Program sectionTitle={content.program.sectionTitle} items={content.program.items} />
         <img src={sep4Image} alt="Section divider" className="section-separator sep4" />
-        <DressCode title={content.dressCode.title} intro={content.dressCode.intro} note={content.dressCode.note} colors={content.dressCode.colors} />
+        <DressCode
+          title={content.dressCode.title}
+          intro={content.dressCode.intro}
+          note={content.dressCode.note}
+          examplesTitle={content.dressCode.examplesTitle}
+          womenButton={content.dressCode.womenButton}
+          menButton={content.dressCode.menButton}
+          colors={content.dressCode.colors}
+        />
         <img src={sep5Image} alt="Section divider" className="section-separator" />
         <Wishes title={content.wishes.title} message1={content.wishes.message1} message2={content.wishes.message2} />
         <img src={sep2Image} alt="Section divider" className="section-separator sep2" />

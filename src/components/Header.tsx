@@ -1,6 +1,7 @@
 import React from 'react'
 import headerImageRu from '../assets/headerFinal.png'
 import headerImageEn from '../assets/eng-header.png'
+import headerImageUa from '../assets/ua-header.png'
 import type { Locale } from '../content'
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 }
 
 export default function Header({ locale }: Props) {
-  const headerImage = locale === 'ru' ? headerImageRu : headerImageEn
+  const headerImage = locale === 'ru' ? headerImageRu : locale === 'en' ? headerImageEn : headerImageUa
 
   return (
     <header className="inv-header">
