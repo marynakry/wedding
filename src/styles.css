@@ -276,6 +276,14 @@ h2{margin:0.5rem 0 1rem;font-size:2rem}
   margin: 3rem 0;
 }
 .swatch{width:40px;height:40px;border-radius:50%;border:1px solid rgba(0,0,0,0.08)}
+.dresscode-examples{margin:0 0 0.9rem}
+.dresscode-links{display:flex;gap:0.6rem;align-items:stretch;justify-content:center;margin-bottom:3rem}
+.dresscode-links .location-link{margin-top:0;width:100%;max-width:190px;flex:0 1 190px;padding:0.5rem 0.6rem}
+
+@media(max-width:799px){
+  .dresscode-links{flex-direction:column;align-items:center;width:100%}
+  .dresscode-links .location-link{flex:0 1 auto;max-width:240px}
+}
 
 .wishes-grid{display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem}
 .wishes-copy{display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem}
