@@ -95,7 +95,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
     rsvp: {
       title: 'Анкета',
       introBeforeDate: 'Будем благодарны, если вы подтвердите свое присутствие и заполните небольшую анкету до',
-      deadline: '15.08.2026',
+      deadline: '10.08.2026',
       nameLabel: 'Ваше имя и фамилия',
       attendanceLegend: 'Будете ли вы на нашем свадебном торжестве?',
       attendanceYes: 'Обязательно буду',
@@ -150,7 +150,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
     rsvp: {
       title: 'RSVP',
       introBeforeDate: 'We would truly appreciate it if you could confirm your attendance and complete this short form by',
-      deadline: '15.08.2026',
+      deadline: '10.08.2026',
       nameLabel: 'Your full name',
       attendanceLegend: 'Will you be joining us for our wedding celebration?',
       attendanceYes: 'Yes, with pleasure!',
@@ -205,7 +205,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
     rsvp: {
       title: 'Анкета',
       introBeforeDate: 'Щоб ми могли якнайкраще підготуватися до свята, просимо вас підтвердити свою присутність і заповнити коротку анкету до',
-      deadline: '15.08.2026',
+      deadline: '10.08.2026',
       nameLabel: 'Ваше імʼя та прізвище',
       attendanceLegend: 'Чи зможете ви бути присутніми на нашому весіллі?',
       attendanceYes: 'Обовʼязково буду',
