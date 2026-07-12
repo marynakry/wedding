@@ -307,8 +307,9 @@ h2{margin:0.5rem 0 1rem;font-size:2rem}
 .rsvp-field{display:flex;flex-direction:column;gap:0.4rem}
 .rsvp-label{color:inherit;font-size:inherit;line-height:inherit}
 .rsvp-input{width:100%;padding:0.7rem 0.8rem;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font:inherit;color:#333;background:#fff}
-.rsvp-fieldset{border:1px solid rgba(0,0,0,0.08);border-radius:10px;padding:0.7rem 0.8rem;display:flex;flex-direction:column;gap:0.55rem}
-.rsvp-option{display:flex;align-items:center;gap:0.5rem;color:inherit;font-size:inherit;line-height:inherit}
+.rsvp-fieldset{border:1px solid rgba(0,0,0,0.08);border-radius:10px;padding:0.55rem 0.7rem;display:flex;flex-direction:column;gap:0.35rem}
+.rsvp-fieldset legend{margin:0;padding:0}
+.rsvp-option{display:flex;align-items:center;gap:0.4rem;color:inherit;font-size:inherit;line-height:inherit}
 .rsvp-option input{margin:0}
 .rsvp-submit{align-self:center;border:none;cursor:pointer;font-family:inherit;font-size:inherit;line-height:inherit}
 .rsvp-submit:disabled{opacity:0.75;cursor:not-allowed}

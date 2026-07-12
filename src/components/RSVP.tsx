@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import barkSound from '../bark.mp3'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykqrooo'
 
@@ -41,6 +42,11 @@ export default function RSVP({ copy }: Props) {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+
+    const barkAudio = new Audio(barkSound)
+    void barkAudio.play().catch(() => {
+      // Ignore autoplay/playback issues silently.
+    })
 
     const form = event.currentTarget
     const formData = new FormData(form)
