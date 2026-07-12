@@ -29,6 +29,15 @@ export default function RSVP({ copy }: Props) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
   const [submitError, setSubmitError] = useState(false)
+  const [attendance, setAttendance] = useState<'yes' | 'no' | ''>('')
+  const [mainCourse, setMainCourse] = useState('')
+
+  function handleAttendanceChange(value: 'yes' | 'no') {
+    setAttendance(value)
+    if (value === 'no') {
+      setMainCourse('')
+    }
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -54,6 +63,8 @@ export default function RSVP({ copy }: Props) {
       }
 
       form.reset()
+      setAttendance('')
+      setMainCourse('')
       setSubmitMessage(copy.successMessage)
     } catch {
       setSubmitError(true)
@@ -78,27 +89,62 @@ export default function RSVP({ copy }: Props) {
         <fieldset className="rsvp-fieldset">
           <legend className="rsvp-label">{copy.attendanceLegend}</legend>
           <label className="rsvp-option">
-            <input type="radio" name="attendance" value="yes" required />
+            <input
+              type="radio"
+              name="attendance"
+              value="yes"
+              checked={attendance === 'yes'}
+              onChange={() => handleAttendanceChange('yes')}
+              required
+            />
             <span>{copy.attendanceYes}</span>
           </label>
           <label className="rsvp-option">
-            <input type="radio" name="attendance" value="no" required />
+            <input
+              type="radio"
+              name="attendance"
+              value="no"
+              checked={attendance === 'no'}
+              onChange={() => handleAttendanceChange('no')}
+              required
+            />
             <span>{copy.attendanceNo}</span>
           </label>
         </fieldset>
 
-        <fieldset className="rsvp-fieldset">
+        <fieldset className="rsvp-fieldset" disabled={attendance === 'no'}>
           <legend className="rsvp-label">{copy.mainCourseLegend}</legend>
           <label className="rsvp-option">
-            <input type="radio" name="mainCourse" value="salmon" required />
+            <input
+              type="radio"
+              name="mainCourse"
+              value="salmon"
+              checked={mainCourse === 'salmon'}
+              onChange={() => setMainCourse('salmon')}
+              required={attendance !== 'no'}
+            />
             <span>{copy.courseSalmon}</span>
           </label>
           <label className="rsvp-option">
-            <input type="radio" name="mainCourse" value="beef" required />
+            <input
+              type="radio"
+              name="mainCourse"
+              value="beef"
+              checked={mainCourse === 'beef'}
+              onChange={() => setMainCourse('beef')}
+              required={attendance !== 'no'}
+            />
             <span>{copy.courseBeef}</span>
           </label>
           <label className="rsvp-option">
-            <input type="radio" name="mainCourse" value="vegetarian" required />
+            <input
+              type="radio"
+              name="mainCourse"
+              value="vegetarian"
+              checked={mainCourse === 'vegetarian'}
+              onChange={() => setMainCourse('vegetarian')}
+              required={attendance !== 'no'}
+            />
             <span>{copy.courseVegetarian}</span>
           </label>
         </fieldset>
