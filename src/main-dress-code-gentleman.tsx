@@ -15,6 +15,6 @@ root.render(
   <img
     src={guysImage}
     alt="Dress code examples for gentlemen"
-    style={{ display: 'block', width: 'auto', height: 'auto' }}
+    style={{ display: 'block', width: 'auto', maxWidth: '100%', height: 'auto' }}
   />
 )
