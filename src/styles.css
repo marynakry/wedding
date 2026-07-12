@@ -279,6 +279,7 @@ h2{margin:0.5rem 0 1rem;font-size:2rem}
 .dresscode-examples{margin:0 0 0.9rem}
 .dresscode-links{display:flex;gap:0.6rem;align-items:stretch;justify-content:center;margin-bottom:3rem}
 .dresscode-links .location-link{margin-top:0;width:100%;max-width:190px;flex:0 1 190px;padding:0.5rem 0.6rem}
+.dresscode-inspiration-link{margin-top:0;margin-bottom:2rem}
 
 @media(max-width:799px){
   .dresscode-links{flex-direction:column;align-items:center;width:100%}
