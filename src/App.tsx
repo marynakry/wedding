@@ -64,9 +64,7 @@ export default function App({ locale }: Props): JSX.Element {
           title={content.dressCode.title}
           intro={content.dressCode.intro}
           note={content.dressCode.note}
-          examplesTitle={content.dressCode.examplesTitle}
-          womenButton={content.dressCode.womenButton}
-          menButton={content.dressCode.menButton}
+          inspirationButton={content.dressCode.inspirationButton}
           colors={content.dressCode.colors}
         />
         <img src={sep5Image} alt="Section divider" className="section-separator" />

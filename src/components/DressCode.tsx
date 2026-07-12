@@ -4,15 +4,12 @@ type Props = {
   title: string
   intro: string
   note: string
-  examplesTitle: string
-  womenButton: string
-  menButton: string
+  inspirationButton: string
   colors: string[]
 }
 
-export default function DressCode({ title, intro, note, examplesTitle, womenButton, menButton, colors }: Props) {
-  const ladyLooksHref = `${import.meta.env.BASE_URL}dress-code-lady/`
-  const gentlemanLooksHref = `${import.meta.env.BASE_URL}dress-code-gentleman/`
+export default function DressCode({ title, intro, note, inspirationButton, colors }: Props) {
+  const inspirationHref = `${import.meta.env.BASE_URL}dress-code-inspo/`
 
   return (
     <section className="dresscode">
@@ -24,25 +21,9 @@ export default function DressCode({ title, intro, note, examplesTitle, womenButt
           <div key={i} className="swatch" style={{ background: c }} />
         ))}
       </div>
-      <p className="intro-subtitle dresscode-examples">{examplesTitle}</p>
-      <div className="dresscode-links">
-        <a
-          className="location-link"
-          href={ladyLooksHref}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {womenButton}
-        </a>
-        <a
-          className="location-link"
-          href={gentlemanLooksHref}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {menButton}
-        </a>
-      </div>
+      <a className="location-link dresscode-inspiration-link" href={inspirationHref} target="_blank" rel="noreferrer">
+        {inspirationButton}
+      </a>
     </section>
   )
 }

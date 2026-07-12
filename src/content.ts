@@ -25,9 +25,7 @@ type SiteContent = {
     title: string
     intro: string
     note: string
-    examplesTitle: string
-    womenButton: string
-    menButton: string
+    inspirationButton: string
     colors: string[]
   }
   wishes: {
@@ -86,9 +84,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
       title: 'Дресс-код',
       intro: 'Мы хотим, чтобы этот день был наполнен легкостью и теплом. Будем рады, если вы поддержите атмосферу нашего праздника, выбрав образ в оттенках нашей цветовой палитры',
       note: '',
-      examplesTitle: 'Вдохновение для образов',
-      womenButton: 'Для дам',
-      menButton: 'Для джентельменов',
+      inspirationButton: 'Вдохновение для образов',
       colors: dressCodeColors
     },
     wishes: {
@@ -143,9 +139,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
       title: 'Dress Code',
       intro: 'We want this day to be filled with warmth and joy. We would be delighted if you could support the atmosphere of our celebration by choosing an outfit in our color palette',
       note: '',
-      examplesTitle: 'Outfit Inspiration',
-      womenButton: 'For Ladies',
-      menButton: 'For Gentlemen',
+      inspirationButton: 'Outfit Inspiration',
       colors: dressCodeColors
     },
     wishes: {
@@ -200,9 +194,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
       title: 'Дрес-код',
       intro: 'Ми хочемо, щоб цей день був сповнений легкості та тепла. Будемо раді, якщо ви підтримаєте атмосферу нашого свята, обравши вбрання у відтінках нашої палітри кольорів',
       note: '',
-      examplesTitle: 'Натхнення для образів',
-      womenButton: 'Для дам',
-      menButton: 'Для джентльменів',
+      inspirationButton: 'Натхнення для образів',
       colors: dressCodeColors
     },
     wishes: {
