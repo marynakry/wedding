@@ -3,6 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (location.hostname.startsWith('www.')) {
+        const target = `${location.protocol}//${location.hostname.slice(4)}${location.pathname}${location.search}${location.hash}`
+        location.replace(target)
+      }
+    </script>
+    <script>
+      if (location.hostname.startsWith('www.')) {
+        const target = `${location.protocol}//${location.hostname.slice(4)}${location.pathname}${location.search}${location.hash}`
+        location.replace(target)
+      }
+    </script>
     <title>Wedding Invitation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
