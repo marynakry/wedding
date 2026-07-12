@@ -90,7 +90,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
     wishes: {
       title: 'Пожелания',
       message1: 'Самым ценным подарком для нас станет ваше присутствие в этот день',
-      message2: 'Если вы захотите поздравить нас еще и подарком, будем благодарны за вклад в бюджет нашей молодой семьи, который поможет воплотить наши мечты'
+      message2: 'Если вы планируете поздравить нас еще и подарком, будем благодарны за вклад в бюджет нашей молодой семьи, который поможет воплотить наши мечты'
     },
     rsvp: {
       title: 'Анкета',
@@ -101,8 +101,8 @@ export const contentByLocale: Record<Locale, SiteContent> = {
       attendanceYes: 'Обязательно буду',
       attendanceNo: 'К сожалению, не получится',
       mainCourseLegend: 'Какое основное блюдо вы предпочитаете?',
-      courseSalmon: 'Филе лосося в травяной корочке',
-      courseBeef: 'Стейк из говядины Ball Tip',
+      courseSalmon: 'Лосось (Herb-Crusted Salmon)',
+      courseBeef: 'Говядина (Beef Ball Tip Steak)',
       courseVegetarian: 'Вегетарианское блюдо',
       submitIdle: 'Отправить',
       submitLoading: 'Отправка...',
@@ -137,7 +137,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
     },
     dressCode: {
       title: 'Dress Code',
-      intro: 'We want this day to be filled with warmth and joy. We would be delighted if you could support the atmosphere of our celebration by choosing an outfit in our color palette',
+      intro: 'We wish for this day to be full of warmth and joy, and we would greatly appreciate it if you could reflect our celebration’s atmosphere by wearing an outfit in our color palette',
       note: '',
       inspirationButton: 'Outfit Inspiration',
       colors: dressCodeColors
@@ -200,7 +200,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
     wishes: {
       title: 'Побажання',
       message1: 'Найціннішим подарунком для нас буде ваша присутність у цей особливий день.',
-      message2: 'Якщо ви також захочете привітати нас подарунком, будемо щиро вдячні за внесок у бюджет нашої молодої сім\'ї, який допоможе здійснити наші мрії'
+      message2: 'Якщо ви також плануєте привітати нас подарунком, будемо щиро вдячні за внесок у бюджет нашої молодої сім\'ї, який допоможе здійснити наші мрії'
     },
     rsvp: {
       title: 'Анкета',
@@ -211,8 +211,8 @@ export const contentByLocale: Record<Locale, SiteContent> = {
       attendanceYes: 'Обовʼязково буду',
       attendanceNo: 'На жаль, не зможу',
       mainCourseLegend: 'Якій основній страві ви надаєте перевагу?',
-      courseSalmon: 'Філе лосося у трав\'яній скоринці',
-      courseBeef: 'Стейк із яловичини Ball Tip',
+      courseSalmon: 'Лосось (Herb-Crusted Salmon)',
+      courseBeef: 'Яловичина (Beef Ball Tip Steak)',
       courseVegetarian: 'Вегетаріанська страва',
       submitIdle: 'Надіслати',
       submitLoading: 'Надсилання...',
